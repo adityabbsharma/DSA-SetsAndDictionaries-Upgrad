@@ -109,7 +109,17 @@ class BST {
 
     // Method to find the lowest common ancestor of two nodes - n1 and n2
     Node lca(Node node, int n1, int n2) {
-        // cpmplete the code for this method
+        // complete the code for this method
+        if(node==null){
+            return null;
+        }
+        else if(node.data>n1 && node.data>n2){
+            return lca(node.left,n1,n2);
+        }
+        else if(n1> node.data && n2>node.data){
+            return lca(node.right,n1,n2);
+        }
+        return node;
 
     }
 }
